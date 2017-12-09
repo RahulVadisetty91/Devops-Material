@@ -1,0 +1,335 @@
+610e5692edd0d585b18fe9bc033aae08
+feature/us639_Rbac_cookbook
+-------------------------------------------------------------------------
+[root@ip-10-14-94-217 policies]# ./upload_policy.sh base/shared/pn_css_shared_mssql.rb tst001
+cd terraform/provision/environments/shared/
+
+log commands
+cd /apps/tomcat/tcapp/csp-e2e-11/
+
+cd /apps/tomcat/tcserver/csp-e2e-11/logs/secapp.log
+cd /apps/tomcat/tcserver/csp-e2e-16/logs/secapp.log
+tc app -war 
+tc app -war 
+tc server - bin / pid
+
+
+tail -500f /apps/tomcat/tcserver/csp-e2e-16/logs/secapp.log
+
+cd /etc/init.d/
+service tomcat_csp-e2e-16 restart
+
+ps -aef | grep ems
+ps -ef | grep java| grep csp-e2e-11	
+----------------------------------------------------------------------------
+feature/us515_Entity_Manager_cookbook
+
+---------------------------------------------------------------------------
+git config --global http.sslVerify false
+git -c http.sslVerify=false clone https://C53972@git.css.local/scm/aut/terraform.git
+
+
+--------------------------------------------------------------------------------------
+find /apps/ -name *.keytab
+ls /apps/tomcat/
+
+cat -n <filename> | grep  ERROR
+
+cat -n <filename> | grep -i error
+
+tail -10f <filename> | grep error
+
+
+extract war 
+jar -xvf .war
+
+nslookup hostname
+dig domain 
+dig -x host - 
+
+history | grep tail 
+please update DE230 after confirming with Kamal 
+ssh -i DevOps002.pem ec2-user@10.14.95.71
+
+ssh -i DevOps002.pem ec2-user@10.14.94.217
+
+/home/teamcity/terraform/scripts/e2e 
+vpc= -var
+env_name= -var
+aws_subnets= -var
+owner= -var
+env_purpose= -var
+customer= -var
+schedule= -var
+lease= -var
+stack= -var
+system= -var
+tier= -var
+shared_ems= -var
+shared_oracle= -var
+less /home/teamcity/terraform/scripts/e2e/provision.sh
+chmod +x terraformTmp.sh
+
+/home/teamcity/terraform/scripts/e2e/provision.sh ops206 subnet-7d3be324 
+subnet-7d3be324 rahul_vadisetty DevOps_testing DevOps Nightly_Shutdown 30 End-to-End App 09/11/17_12:22:20_UTC  
+
+/home/teamcity/terraform/scripts/prod/provision.sh ops666 subnet-2d84755b subnet-2d84755b c70706 12c DevOps Nightly_Shutdown 1_month DevOps prod App
+/home/teamcity/terraform/scripts/e2e/provision.sh ops206 subnet-7d3be324 subnet-7d3be324 Neil Hunt DevOps_testing DevOps Nightly_Shutdown 30_month DevOps End-to-End App pd i-0913640901b488837
+
+/home/teamcity/terraform/scripts/prod/provision.sh ops666 subnet-2                                                      
+d84755b subnet-2d84755b c70706 12c DevOps Nightly_Shutdown 1_month DevOps prod App 
+
+ENV_NAME=${1}
+AWS_SUBNETS=${2}
+TAG_OWNER=${3}
+TAG_ENV_PURPOSE=${4}
+TAG_CUSTOMER=${5}
+TAG_SCHED=${6}
+TAG_LEASE=${7}
+TAG_STACK=${8}
+TAG_SYSTEM=${9}
+TAG_TIER=${10}
+AWS_VPC="pd"
+E2E_ORACLE_ID=${11}
+E2E_EMS_ID=${12}
+DATE_TIME=`date +%D_%T_%Z`
+
+
+
+terraform apply -var 
+vpc="$AWS_VPC" -var 
+env_name="$ENV_NAME" -var 
+aws_subnets="$AWS_SUBNETS" -var 
+owner="$TAG_OWNER" -var 
+env_purpose="$TAG_ENV_PURPOSE" -var 
+
+customer="$TAG_CUSTOMER" -var 
+schedule="$TAG_SCHED" -var 
+
+lease="$TAG_LEASE" -var stack="$TAG_STACK" -var 
+system="$TAG_SYSTEM" -var 
+tier="$TAG_TIER" -var shared_ems="$E2E_EMS_ID" -var 
+shared_oracle="$E2E_ORACLE_ID" -var 
+creation_time="$DATE_TIME" 
+./upload_policy.sh base/shared/pn_css_shared_mssql.rb
+
+
+aws ec2 start-instances --instance-ids i-0a4a33e04c4ccc916
+
+
+
+/apps/neo4j/logs
+java -jar config-migrator.jar path/to/neo4j2.3 path/to/neo4j3.2
+dbms.allow_format_migration=true
+(cd /home/css.local/c92920/policies && sudo ./upload_policy.sh {e2e/prod_style}/{policy name}.rb {env_name}) 
+
+(cd /home/css.local/c53972/policies && sudo ./upload_policy.sh e2e/pn_css_e2e.rb ops208)
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+./aws-saml
+aws ec2 describe-regions
+aws ec2 describe-instances --max-items=1
+aws-saml --help
+
+aws ec2 run-instances --image-id ami-676d1f70  --count 1 --instance-type r4.2xlarge --security-group-ids sg-00ce2164  
+--subnet-id subnet-00155f59 --block-device-mappings file://bdm.json
+
+[
+  {
+    "DeviceName": "/dev/sda1",
+    "Ebs": {
+      "DeleteOnTermination": true,
+      "SnapshotId": "snap-e341ccf1",
+      "VolumeSize": 80,
+      "VolumeType": "gp2"
+    }
+  },
+  {
+    "DeviceName": "xvdc",
+    "Ebs": {
+      "DeleteOnTermination": true,
+      "SnapshotId": "snap-f33ebaf5",
+      "VolumeSize": 10,
+      "VolumeType": "gp2"
+    }
+  },
+  {
+    "DeviceName": "xvdf",
+    "Ebs": {
+      "DeleteOnTermination": true,
+      "SnapshotId": "snap-f4255e68",
+      "VolumeSize": 50,
+      "VolumeType": "gp2"
+    }
+  },
+  {
+    "DeviceName": "xvdb",
+    "Ebs": {
+      "DeleteOnTermination": true,
+      "SnapshotId": "snap-ded21c44",
+      "VolumeSize": 32,
+      "VolumeType": "gp2"
+    }
+  }
+]
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+http://pipeline-dev.css.local:443/viewType.html?buildTypeId=LittleSandBoxDev_CookbookDeploy&tab=buildTypeStatusDiv
+
+
+$ mount
+C:/Program Files (x86)/Git on / type ntfs (binary,noacl,auto)
+C:/Program Files (x86)/Git/usr/bin on /bin type ntfs (binary,noacl,auto)
+E:/Users/C53972.adm/AppData/Local/Temp on /tmp type ntfs (binary,noacl,posix=0)
+C: on /c type ntfs (binary,noacl,posix=0,user,noumount,auto)
+D: on /d type ntfs (binary,noacl,posix=0,user,noumount,auto)
+E: on /e type ntfs (binary,noacl,posix=0,user,noumount,auto)
+P: on /p type ntfs (binary,noacl,posix=0,user,noumount,auto)
+U: on /u type ntfs (binary,noacl,posix=0,user,noumount,auto)
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /
+$
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /
+$ df -h .
+Filesystem                  Size  Used Avail Use% Mounted on
+C:/Program Files (x86)/Git   80G   59G   21G  74% /
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /
+$
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /
+$ df -h
+Filesystem                  Size  Used Avail Use% Mounted on
+C:/Program Files (x86)/Git   80G   59G   21G  74% /
+E:                           38G  260M   38G   1% /e
+D:                           38G   16G   23G  41% /d
+P:                           11T  7.7T  3.1T  72% /p
+U:                          5.9T  4.7T  1.2T  80% /u
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /
+$
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /
+$ cd /u
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /u
+$ ls -l
+total 1
+drwxr-xr-x 1 C53972.adm 1049089   0 Jun 22 15:36 $RECYCLE.BIN/
+-rw-r--r-- 1 C53972.adm 1049089 402 Jun 22 15:36 desktop.ini
+drwxr-xr-x 1 C53972.adm 1049089   0 Jun 22 15:36 My Music/
+drwxr-xr-x 1 C53972.adm 1049089   0 Jun 22 15:36 My Pictures/
+drwxr-xr-x 1 C53972.adm 1049089   0 Jun 22 15:36 My Videos/
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /u
+$ mkdir test-dir
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /u
+$ cd ..
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /
+$ clear
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /
+$ pwd
+/
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /
+$ ls -l
+total 2692
+drwxr-xr-x 1 C53972.adm 1049089       0 Apr  7 14:21 bin/
+drwxr-xr-x 1 C53972.adm 1049089       0 Apr  7 14:19 cmd/
+drwxr-xr-x 1 C53972.adm 1049089       0 Apr  7 14:19 dev/
+drwxr-xr-x 1 C53972.adm 1049089       0 Apr  7 14:19 etc/
+-rwxr-xr-x 1 C53972.adm 1049089  140800 Oct 19  2015 git-bash.exe*
+-rwxr-xr-x 1 C53972.adm 1049089  140288 Oct 19  2015 git-cmd.exe*
+drwxr-xr-x 1 C53972.adm 1049089       0 Apr  7 14:20 mingw64/
+dr-xr-xr-x 9 C53972.adm 1049089       0 Jun 22 21:15 proc/
+-rw-r--r-- 1 C53972.adm 1049089   57831 Oct 19  2015 ReleaseNotes.html
+drwxr-xr-x 1 C53972.adm 1049089       0 Jun 22 21:09 tmp/
+-rw-r--r-- 1 C53972.adm 1049089  969002 Oct 21  2015 unins000.dat
+-rwxr-xr-x 1 C53972.adm 1049089 1300779 Oct 21  2015 unins000.exe*
+drwxr-xr-x 1 C53972.adm 1049089       0 Apr  7 14:22 usr/
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /
+$ pwd
+/
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /
+$ df -h
+Filesystem                  Size  Used Avail Use% Mounted on
+C:/Program Files (x86)/Git   80G   59G   21G  74% /
+E:                           38G  260M   38G   1% /e
+D:                           38G   16G   23G  41% /d
+P:                           11T  7.7T  3.1T  72% /p
+U:                          5.9T  4.7T  1.2T  80% /u
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /
+$ p:
+bash: p:: command not found
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /
+$ cd /p
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /p
+$ pwd
+/p
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /p
+$ cd ..
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /
+$ df -h
+Filesystem                  Size  Used Avail Use% Mounted on
+C:/Program Files (x86)/Git   80G   59G   21G  74% /
+E:                           38G  260M   38G   1% /e
+D:                           38G   16G   23G  41% /d
+P:                           11T  7.7T  3.1T  72% /p
+U:                          5.9T  4.7T  1.2T  80% /u
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /
+$ /u
+bash: /u: Is a directory
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /
+$ pwd
+/
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /
+$ cd /u
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /u
+$ pwd
+http://pdops209em.css.local:8111/entitymanager-ui/
+
+http://pdops209em.css.local:8116/model-factory-web/#/
+
+/u
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /u
+$ mkdir cookbook
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /u
+$ cd cookbook/
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /u/cookbook
+$ pwd
+/u/cookbook
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /u/cookbook
+$ git clone https://C53972@git.css.local/scm/acc/css_appops.git
+Cloning into 'css_appops'...
+fatal: unable to access 'https://C53972@git.css.local/scm/acc/css_appops.git/': error setting certificate verify locations:
+  CAfile: C:/Program Files (x86)/Git/mingw64/libexec/ssl/certs/ca-bundle.crt
+  CApath: none
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /u/cookbook
+$ https://C53972@git.css.local/scm/acc/css_appops.git^C
+
+C53972.adm@CSSAVDVDIADM275 MINGW64 /u/cookbook
+$
+----------------------------------------------------------------------------------------------------------------------------------------------

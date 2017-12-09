@@ -1,0 +1,89 @@
+   58  yum install ansible
+   59  ansible --version
+   60  vi /etc/ansible/ansible.cfg 
+   61  ansible-doc -l
+   62  ansible-doc file
+   63  vi /etc/ansible/hosts 
+   64  ansible all -m raw -a 'sudo yum update -y '
+   66  ansible all --sudo --ask-sudo-pass -m raw -a 'sudo yum -y install python-simplejson'
+   67  ansible all --ask-pass -m raw -a 'sudo yum -y install python-simplejson'
+   68  ansible all --ask-pass -m raw -a 'yum -y install python-simplejson'
+   69  ansible all -m yum -a "name=* state=latest" --ask-pass
+   70  ansible localhost -m ping
+   71  ansible all -m service -a "name=mysql state=restarted"
+   72  ansible all -m service -a "name=mysql state=restarted" --ask-pass
+   73  ansible all -m service -a "name=mariadb state=restarted" --ask-pass
+   74  ansible all -a "uptime" --ask-pass
+   75  ansible all -m user -a "name=devops" comment="Griff Duffy"  group=users password="pass@123" --ask-pass
+   76  ansible all -m user -a "name=devops" comment="Griff Duffy" group=users password="pass@123" --ask-pass
+   77  ansible all -m user -a "name=devops comment="Griff Duffy" group=users password="pass@123" --ask-pass
+   78  ansible all -m user -a 'name=devops comment=Griff Duffy group=users password=pass@123' --ask-pass
+   79  ansible all -m user -a 'name=devops password=pass@123' --ask-pass
+   80  ansible all -m user -a 'name=devops comment=Griff Duffy group=wheels password=pass@123' --ask-pass
+   81  ansible all -m user -a "name=mk shell=/bin/bash groups=wheel password=pass@123"
+   82  ansible all -m user -a "name=mk shell=/bin/bash groups=wheel password=pass@123" --ask-pass
+   86  ansible all -m authorized_key -a "key="{{ lookup('file', '/root/.ssh/id_rsa.pub') }}" --ask-pass
+   87  ansible all -m authorized_key -a "user=root key="{{ lookup('file', '/home/michael/.ssh/id_rsa.pub') }}" --ask-pass
+   88  ansible all -m authorized_key -a 'user=root key="{{ lookup('file', '/home/michael/.ssh/id_rsa.pub') }}' --ask-pass
+   89  ansible all -m authorized_key -a 'user=root key="{{ lookup('file', '/root/.ssh/id_rsa.pub') }}' --ask-pass
+   90  mkdir -p ~/ansible/files
+   91  ssh-keygen -t rsa -f ~/ansible/files/authorized_keys.myuser
+   93  mkdir ansibledemp
+   94  mv ansibledemp/ ansibledemo
+   95  cd ansibledemo/
+   97  ansible-playbook sshkey.yml 
+   98  ansible-playbook sshkey.yml --ask-pass
+  100  ansible-playbook sshkey.yml --ask-pass
+  104  ansible all -m user -a "name=meg generate_ssh_key=yes"ansible all -m user -a "name=
+  105  ansible all -m user -a "name=meg generate_ssh_key=yes"
+  106  ansible all -m user -a "name=meg generate_ssh_key=yes" --ask-pass
+  112  cd /opt/ansibledemo/
+  116  ansible-playbook nginx-playbook.yml --ask-pass
+  119  ansible-playbook nginx-playbook.yml --ask-pass
+  120  cd /opt/ansibledemo/
+  122  ansible-playbook nginx-new.yml --ask-pass
+  124  ansible-playbook nginx-new.yml --ask-pass
+  126  ansible-playbook nginx-new.yml --ask-pass
+  128  ansible --version
+  129  vi /etc/ansible/ansible.cfg
+  130  vi /etc/ansible/hosts 
+  131  ansible localhost -m ping
+  132  ansible-doc file
+  134  cd /opt/ansibledemo/
+  138  cd /opt/ansibledemo/
+  140  ansible-playbook delegate.yaml 
+  144  ansible-playbook delegate.yaml 
+  147  ansible-playbook delegate.yaml --check
+  148  ansible-playbook delegate.yaml --ask-pass
+  150  ansible-playbook conditiondemo.yaml --ask-pass
+  151  cd /opt/ansibledemo/
+  154  ansible-galaxy init tomcat
+  159  cd /opt/ansibledemo/firstplaybook/roles/tomcat/
+  194  ansible-playbook first_playbook.yml --ask-password
+  195  ansible-playbook first_playbook.yml --ask-pass
+  198  ansible-playbook first_playbook.yml --ask-pass
+  199  ansible-playbook all first_playbook.yml --ask-pass
+  200  ansible-playbook -i inventories/dev -k first_playbook.yml --ask-pass
+  204  ansible-playbook -i inventories/dev -k first_playbook.yml --ask-pass
+  206  ansible-playbook -i inventories/dev -k first_playbook.yml --ask-pass
+  223  ansible-playbook -i inventories/dev -k first_playbook.yml --ask-pass
+  233  ansible-playbook -i inventories/dev -k first_playbook.yml --ask-pass
+  235  ansible-playbook -i inventories/dev -k first_playbook.yml --ask-pass
+  236  cd /opt/ansibledemo/
+  239  vi /etc/ansible/hosts 
+  244  cd /opt/ansibledemo/
+  266  ansible-playbook create_users.yml --check
+  299  ansible-playbook -i inventories/dev -k first_playbook.yml --ask-pass
+  431  cd ansibledemo/
+  460  cd ansibledemo/
+  462  history | grep ansible
+  463  vi /etc/ansible/ansible.cfg 
+  464  vi /etc/ansible/hosts 
+  465  history | grep ansible > ansiblecommands.txt
+  
+  https://github.com/yankurniawan/ansible-for-aws
+  
+  [all]
+100.122.195.111 ansible_ssh_private_key_file=./mykeypair.pem  ansible_ssh_user=ec2-user
+
+ansible all -m raw -a 'sudo yum -y install httpd'
